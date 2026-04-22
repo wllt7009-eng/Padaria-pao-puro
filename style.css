@@ -1,126 +1,217 @@
-/* Reset básico */
+/* PADARIA PÃO PURO - CSS PREMIUM 
+   Tipografia: Montserrat (Títulos) e Poppins (Texto)
+*/
+
+:root {
+    --marrom-primario: #4A2B10;
+    --marrom-escuro: #3D1D00;
+    --bege-fundo: #FFFBEB;
+    --dourado: #D97706;
+    --verde-wpp: #25d366;
+    --branco: #ffffff;
+    --transicao: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: #FFFBEB; /* Bege clarinho do fundo */
-    color: #4A2B10; /* Marrom escuro para textos */
+    background-color: var(--bege-fundo);
+    color: var(--marrom-primario);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Títulos com Montserrat para passar autoridade */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 25px;
 }
 
 .section-padding {
-    padding: 60px 0;
+    padding: 100px 0;
 }
 
-/* Hero Section */
+/* --- Hero Section --- */
 .hero {
-    height: 80vh;
-    background: linear-gradient(rgba(74, 43, 16, 0.6), rgba(74, 43, 16, 0.6)), url('SUA-IMAGEM-AQUI.jpg');
+    height: 90vh; /* Um pouco mais alto para impacto */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('1000813190.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* Efeito Parallax suave */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: var(--branco);
 }
 
-.hero h1 { font-size: 3rem; margin-bottom: 10px; }
+.hero h1 { 
+    font-size: clamp(2.5rem, 8vw, 4.5rem); 
+    margin-bottom: 15px;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
 
 .btn-hero {
     display: inline-block;
-    background-color: #00A859; /* Verde WhatsApp do botão central */
-    color: white;
-    padding: 15px 30px;
-    border-radius: 30px;
+    background-color: var(--verde-wpp);
+    color: var(--branco);
+    padding: 18px 40px;
+    border-radius: 50px;
     text-decoration: none;
-    font-weight: bold;
-    margin-top: 20px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    transition: var(--transicao);
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
 }
 
-/* Cards de Produtos */
+.btn-hero:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+}
+
+/* --- Cards de Produtos --- */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 50px;
+    opacity: 0.8;
+}
+
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
 }
 
 .product-card {
-    background: white;
-    border-radius: 15px;
+    background: var(--branco);
+    border-radius: 25px; /* Bordas mais modernas */
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(74, 43, 16, 0.05);
+    transition: var(--transicao);
+    border: 1px solid rgba(74, 43, 16, 0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(74, 43, 16, 0.12);
 }
 
 .image-placeholder {
-    height: 200px;
-    background-color: #eee;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 250px;
+    background-color: #f3f3f3;
+    overflow: hidden;
 }
 
-.card-content { padding: 20px; }
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transicao);
+}
+
+.product-card:hover img {
+    transform: scale(1.1); /* Zoom suave na foto ao passar o mouse */
+}
+
+.card-content { padding: 25px; }
 
 .tag {
-    background: #E67E22;
-    color: white;
-    padding: 3px 12px;
-    border-radius: 15px;
-    font-size: 0.8rem;
+    background: var(--dourado);
+    color: var(--branco);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 15px;
 }
 
-/* Diferenciais */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    text-align: center;
-}
-
+/* --- Diferenciais --- */
 .feature-card {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
+    background: var(--branco);
+    padding: 40px 30px;
+    border-radius: 30px;
+    transition: var(--transicao);
 }
 
-/* História */
-.history { text-align: center; }
-.history-text { max-width: 800px; margin: 0 auto; line-height: 1.8; }
+.feature-card:hover {
+    background: var(--marrom-primario);
+    color: var(--bege-fundo);
+}
 
-/* Rodapé */
+.feature-card .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* --- Rodapé --- */
 .footer {
-    background-color: #3D1D00; /* Marrom bem escuro */
+    background-color: var(--marrom-escuro);
     color: #F5DEB3;
-    padding: 40px 0;
+    padding: 80px 0 40px;
     text-align: center;
 }
 
-.footer hr { border: 0; border-top: 1px solid #5a3210; margin: 20px 0; }
+.footer h3 { font-size: 2rem; margin-bottom: 15px; }
 
-/* Botão WhatsApp Flutuante */
+.footer hr { 
+    border: 0; 
+    border-top: 1px solid rgba(245, 222, 179, 0.1); 
+    margin: 40px 0; 
+}
+
+/* --- WhatsApp Flutuante Animado --- */
 .whatsapp-float {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #25d366;
+    bottom: 30px;
+    right: 30px;
+    width: 65px;
+    height: 65px;
+    background-color: var(--verde-wpp);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    z-index: 9999;
+    animation: pulse 2s infinite;
 }
 
-.whatsapp-float img { width: 35px; }
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Responsividade Celular */
+@media (max-width: 768px) {
+    .section-padding { padding: 60px 0; }
+    .hero h1 { font-size: 2.8rem; }
+    .product-grid { grid-template-columns: 1fr; }
+}
