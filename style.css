@@ -1,13 +1,10 @@
-/* PADARIA PÃO PURO - CSS CORRIGIDO (ESPAÇAMENTO) */
+/* PADARIA PÃO PURO - CORREÇÃO DE MARGENS E FLUIDEZ */
 
 :root {
     --marrom-primario: #4A2B10;
-    --marrom-escuro: #3D1D00;
     --bege-fundo: #FFFBEB;
-    --dourado: #D97706;
-    --verde-wpp: #25d366;
     --branco: #ffffff;
-    --transicao: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --verde-wpp: #25d366;
 }
 
 * {
@@ -18,152 +15,82 @@
 
 body {
     background-color: var(--bege-fundo);
-    color: var(--marrom-primario);
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Evita que o site "dance" para os lados */
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: -0.5px;
-}
-
-/* AJUSTE AQUI: Aumentamos o respiro lateral do container */
+/* AJUSTE MESTRE: Margem de segurança obrigatória */
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 30px; /* Aumentado de 20 para 30 para afastar do canto */
+    padding: 0 40px; /* Aumentamos para 40px para o texto respirar bem */
 }
 
-.section-padding {
-    padding: 80px 0;
-}
-
-/* --- Hero Section --- */
+/* HERO: Centralização total com respiro */
 .hero {
-    height: 90vh;
+    height: 85vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('1000813190.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--branco);
-    padding: 0 25px; /* Garante que o texto do topo não cole no celular */
+    color: white;
+    padding: 0 40px; /* Garante que o título do topo não encoste no vidro */
 }
 
-.hero h1 { 
-    font-size: clamp(2rem, 8vw, 4.5rem); 
-    margin-bottom: 15px;
+.hero h1 {
+    font-size: clamp(2rem, 10vw, 4rem);
+    line-height: 1.2;
 }
 
-.btn-hero {
-    display: inline-block;
-    background-color: var(--verde-wpp);
-    color: var(--branco);
-    padding: 18px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: var(--transicao);
-    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+/* SEÇÕES: Mais espaço entre um bloco e outro */
+.section-padding {
+    padding: 100px 0; /* Aumenta o espaço em cima e embaixo das seções */
 }
 
-/* --- Cards de Produtos --- */
 .section-title {
     text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-    padding: 0 10px; /* Evita que o título cole no canto */
+    margin-bottom: 20px;
+    padding: 0 20px;
 }
 
 .section-subtitle {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
+    padding: 0 20px;
     opacity: 0.8;
-    padding: 0 15px;
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
+/* CARDS: Ajuste interno */
 .product-card {
     background: var(--branco);
     border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(74, 43, 16, 0.05);
-    transition: var(--transicao);
+    margin-bottom: 20px; /* Espaço extra no mobile */
 }
 
 .card-content { 
-    padding: 30px; /* Aumentado para o texto interno respirar */
+    padding: 35px; /* Espaço interno maior para o texto do lanche */
 }
 
-/* --- Diferenciais --- */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+/* HISTÓRIA E CONTATOS: Centralização e Respiro */
+.history-text, .info-grid {
+    padding: 0 10px; /* Garante que os textos internos não colem */
 }
 
-.feature-card {
-    background: var(--branco);
-    padding: 45px 35px; /* Mais espaço interno nos diferenciais */
-    border-radius: 30px;
-    text-align: center;
-}
-
-/* --- História --- */
-.history-text { 
-    max-width: 800px; 
-    margin: 0 auto; 
-    line-height: 1.8;
-    padding: 0 10px; /* Respiro lateral na história */
-}
-
-/* --- Rodapé e Informações --- */
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.footer {
-    background-color: var(--marrom-escuro);
-    color: #F5DEB3;
-    padding: 60px 20px; /* Padding lateral para o rodapé */
-}
-
-/* --- WhatsApp Flutuante --- */
-.whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 60px;
-    height: 60px;
-    background-color: var(--verde-wpp);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-}
-
-/* Responsividade para Celular */
+/* RESPONSIVIDADE PARA CELULAR (A mágica acontece aqui) */
 @media (max-width: 768px) {
     .container {
-        padding: 0 20px; /* No celular o espaço é sagrado, mas mantemos 20px */
+        padding: 0 35px; /* Respiro lateral forte no celular */
     }
-    .section-padding { padding: 50px 0; }
-    .hero h1 { font-size: 2.2rem; }
-    .card-content { padding: 20px; }
+    
+    .hero {
+        padding: 0 30px;
+    }
+
+    .section-padding {
+        padding: 70px 0; /* Um pouco menos de espaço vertical no celular */
+    }
 }
