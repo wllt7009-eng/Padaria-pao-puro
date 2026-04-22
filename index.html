@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Padaria Pão Puro - São Francisco MG</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
     <section class="hero">
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
             <h1>Pães frescos todos os dias</h1>
             <p>Qualidade e sabor direto para você</p>
             <a href="https://wa.me/5531999999999?text=Olá! Gostaria de fazer um pedido." class="btn-hero">
@@ -20,11 +25,11 @@
     </section>
 
     <section class="container section-padding">
-        <h2 class="section-title">Nossos Produtos</h2>
-        <p class="section-subtitle">Feitos com carinho e ingredientes de qualidade</p>
+        <h2 class="section-title" data-aos="fade-right">Nossos Produtos</h2>
+        <p class="section-subtitle" data-aos="fade-right" data-aos-delay="200">Feitos com carinho e ingredientes de qualidade</p>
         
         <div class="product-grid">
-            <div class="product-card">
+            <div class="product-card" data-aos="zoom-in" data-aos-delay="100">
                 <div class="image-placeholder">FOTO AQUI</div>
                 <div class="card-content">
                     <span class="tag">Pães</span>
@@ -32,7 +37,7 @@
                     <p>Crocante por fora, macio por dentro. Assado no mesmo dia.</p>
                 </div>
             </div>
-            <div class="product-card">
+            <div class="product-card" data-aos="zoom-in" data-aos-delay="300">
                 <div class="image-placeholder">FOTO AQUI</div>
                 <div class="card-content">
                     <span class="tag">Pães</span>
@@ -40,7 +45,7 @@
                     <p>Folhado artesanal, perfeito para o café da manhã.</p>
                 </div>
             </div>
-            <div class="product-card">
+            <div class="product-card" data-aos="zoom-in" data-aos-delay="500">
                 <div class="image-placeholder">FOTO AQUI</div>
                 <div class="card-content">
                     <span class="tag">Bolos</span>
@@ -53,17 +58,17 @@
 
     <section class="container section-padding">
         <div class="features-grid">
-            <div class="feature-card">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="icon">🕒</div>
                 <h3>Produtos Frescos Diariamente</h3>
                 <p>Nossos pães são assados todos os dias, garantindo frescor e qualidade incomparáveis.</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon">🏅</div>
                 <h3>Ingredientes de Qualidade</h3>
                 <p>Selecionamos cuidadosamente cada ingrediente para oferecer o melhor sabor.</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon">🤝</div>
                 <h3>Atendimento Rápido e Acolhedor</h3>
                 <p>Nossa equipe está sempre pronta para atender você com um sorriso no rosto.</p>
@@ -71,7 +76,7 @@
         </div>
     </section>
 
-    <section class="container section-padding history">
+    <section class="container section-padding history" data-aos="fade-up">
         <div class="icon-heart">🧡</div>
         <h2>Nossa História</h2>
         <div class="history-text">
@@ -80,20 +85,20 @@
         </div>
     </section>
 
-    <section class="container section-padding contact-info">
+    <section class="container section-padding contact-info" data-aos="fade-in">
         <h2>Onde Estamos</h2>
         <p>Visite-nos em São Francisco - MG</p>
         
         <div class="info-grid">
-            <div>
+            <div data-aos="flip-left" data-aos-delay="100">
                 <h4>📍 Endereço</h4>
                 <p>Rua das Flores, 123<br>Centro, São Francisco - MG<br>CEP: 35640-000</p>
             </div>
-            <div>
+            <div data-aos="flip-left" data-aos-delay="200">
                 <h4>🕒 Horário de Funcionamento</h4>
                 <p>Segunda a Sábado: 6h às 19h<br>Domingo: 6h às 12h</p>
             </div>
-            <div>
+            <div data-aos="flip-left" data-aos-delay="300">
                 <h4>📞 Contato</h4>
                 <p>(31) 99999-9999<br>contato@padariapaopuro.com.br</p>
             </div>
@@ -113,6 +118,17 @@
     <a href="https://wa.me/5531999999999" class="whatsapp-float" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializa as animações
+        AOS.init({
+            duration: 1000, // Duração da animação (1 segundo)
+            once: true,     // Anima apenas uma vez ao rolar
+            offset: 120,    // Distância para começar a animar
+            easing: 'ease-out-back' // Tipo de movimento mais suave
+        });
+    </script>
 
 </body>
 </html>
