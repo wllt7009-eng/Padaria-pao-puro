@@ -1,6 +1,4 @@
-/* PADARIA PÃO PURO - CSS PREMIUM 
-   Tipografia: Montserrat (Títulos) e Poppins (Texto)
-*/
+/* PADARIA PÃO PURO - CSS CORRIGIDO (ESPAÇAMENTO) */
 
 :root {
     --marrom-primario: #4A2B10;
@@ -26,7 +24,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Títulos com Montserrat para passar autoridade */
 h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -34,40 +31,35 @@ h1, h2, h3, h4 {
     letter-spacing: -0.5px;
 }
 
+/* AJUSTE AQUI: Aumentamos o respiro lateral do container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 25px;
+    padding: 0 30px; /* Aumentado de 20 para 30 para afastar do canto */
 }
 
 .section-padding {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 /* --- Hero Section --- */
 .hero {
-    height: 90vh; /* Um pouco mais alto para impacto */
+    height: 90vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('1000813190.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Efeito Parallax suave */
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--branco);
+    padding: 0 25px; /* Garante que o texto do topo não cole no celular */
 }
 
 .hero h1 { 
-    font-size: clamp(2.5rem, 8vw, 4.5rem); 
+    font-size: clamp(2rem, 8vw, 4.5rem); 
     margin-bottom: 15px;
-    text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
-}
-
-.hero p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin-bottom: 30px;
 }
 
 .btn-hero {
@@ -78,140 +70,100 @@ h1, h2, h3, h4 {
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
     transition: var(--transicao);
     box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-}
-
-.btn-hero:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
 }
 
 /* --- Cards de Produtos --- */
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    padding: 0 10px; /* Evita que o título cole no canto */
 }
 
 .section-subtitle {
     text-align: center;
     margin-bottom: 50px;
     opacity: 0.8;
+    padding: 0 15px;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
 .product-card {
     background: var(--branco);
-    border-radius: 25px; /* Bordas mais modernas */
+    border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(74, 43, 16, 0.05);
     transition: var(--transicao);
-    border: 1px solid rgba(74, 43, 16, 0.05);
 }
 
-.product-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(74, 43, 16, 0.12);
-}
-
-.image-placeholder {
-    height: 250px;
-    background-color: #f3f3f3;
-    overflow: hidden;
-}
-
-.product-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transicao);
-}
-
-.product-card:hover img {
-    transform: scale(1.1); /* Zoom suave na foto ao passar o mouse */
-}
-
-.card-content { padding: 25px; }
-
-.tag {
-    background: var(--dourado);
-    color: var(--branco);
-    padding: 5px 15px;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    display: inline-block;
-    margin-bottom: 15px;
+.card-content { 
+    padding: 30px; /* Aumentado para o texto interno respirar */
 }
 
 /* --- Diferenciais --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
 .feature-card {
     background: var(--branco);
-    padding: 40px 30px;
+    padding: 45px 35px; /* Mais espaço interno nos diferenciais */
     border-radius: 30px;
-    transition: var(--transicao);
-}
-
-.feature-card:hover {
-    background: var(--marrom-primario);
-    color: var(--bege-fundo);
-}
-
-.feature-card .icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    display: block;
-}
-
-/* --- Rodapé --- */
-.footer {
-    background-color: var(--marrom-escuro);
-    color: #F5DEB3;
-    padding: 80px 0 40px;
     text-align: center;
 }
 
-.footer h3 { font-size: 2rem; margin-bottom: 15px; }
-
-.footer hr { 
-    border: 0; 
-    border-top: 1px solid rgba(245, 222, 179, 0.1); 
-    margin: 40px 0; 
+/* --- História --- */
+.history-text { 
+    max-width: 800px; 
+    margin: 0 auto; 
+    line-height: 1.8;
+    padding: 0 10px; /* Respiro lateral na história */
 }
 
-/* --- WhatsApp Flutuante Animado --- */
+/* --- Rodapé e Informações --- */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.footer {
+    background-color: var(--marrom-escuro);
+    color: #F5DEB3;
+    padding: 60px 20px; /* Padding lateral para o rodapé */
+}
+
+/* --- WhatsApp Flutuante --- */
 .whatsapp-float {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 65px;
-    height: 65px;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
     background-color: var(--verde-wpp);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    z-index: 9999;
-    animation: pulse 2s infinite;
+    z-index: 999;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-}
-
-/* Responsividade Celular */
+/* Responsividade para Celular */
 @media (max-width: 768px) {
-    .section-padding { padding: 60px 0; }
-    .hero h1 { font-size: 2.8rem; }
-    .product-grid { grid-template-columns: 1fr; }
+    .container {
+        padding: 0 20px; /* No celular o espaço é sagrado, mas mantemos 20px */
+    }
+    .section-padding { padding: 50px 0; }
+    .hero h1 { font-size: 2.2rem; }
+    .card-content { padding: 20px; }
 }
