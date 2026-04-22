@@ -1,0 +1,126 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #FFFBEB; /* Bege clarinho do fundo */
+    color: #4A2B10; /* Marrom escuro para textos */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(74, 43, 16, 0.6), rgba(74, 43, 16, 0.6)), url('SUA-IMAGEM-AQUI.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 10px; }
+
+.btn-hero {
+    display: inline-block;
+    background-color: #00A859; /* Verde WhatsApp do botão central */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Cards de Produtos */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.image-placeholder {
+    height: 200px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-content { padding: 20px; }
+
+.tag {
+    background: #E67E22;
+    color: white;
+    padding: 3px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+/* Diferenciais */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+/* História */
+.history { text-align: center; }
+.history-text { max-width: 800px; margin: 0 auto; line-height: 1.8; }
+
+/* Rodapé */
+.footer {
+    background-color: #3D1D00; /* Marrom bem escuro */
+    color: #F5DEB3;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer hr { border: 0; border-top: 1px solid #5a3210; margin: 20px 0; }
+
+/* Botão WhatsApp Flutuante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.whatsapp-float img { width: 35px; }
